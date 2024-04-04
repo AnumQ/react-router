@@ -3,7 +3,7 @@
 This project demonstrates a simple navigation router that navigates between pages in react. 
 Simple version of react-router npm package.
 
-## Development
+## To run the app:
 
 In the project directory, you can run:
 
