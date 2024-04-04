@@ -46,7 +46,7 @@ function Router(props) {
     //if history.pushState() has been used to add a history entry to the history stack, that history entry is used instead.
     window.addEventListener("popstate", popStateTiggered);
     return () => {
-      // remove listener on unmount
+      // remove listener on
       window.removeEventListener("popstate", popStateTiggered);
     };
   }, []);

@@ -1,9 +1,13 @@
 import "./App.css";
-
+import home from "./home.md";
+import ReactMarkdown from "react-markdown";
+import { useMarkDown } from "./useMarkDown";
 function Home() {
+  const { data } = useMarkDown(home);
+
   return (
     <div className="container">
-      <h1>Home Page</h1>
+      <ReactMarkdown>{data}</ReactMarkdown>
     </div>
   );
 }

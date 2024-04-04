@@ -7,7 +7,7 @@ import { Router, Route, Link } from "./Router";
 
 function Menu() {
   return (
-    <nav>
+    <nav className="menu">
       <ul>
         <li>
           <Link href="/">Home</Link>
