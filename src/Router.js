@@ -38,17 +38,21 @@ function Router(props) {
   };
 
   useEffect(() => {
-    window.addEventListener("popstate", popStateTiggered);
-
+    // To handle navigation on initial load
     handleNavigation();
 
+    // popstate is fired when the active history entry changes while the user navigates the session history.
+    //It changes the current history entry to that of the last page the user visited or,
+    //if history.pushState() has been used to add a history entry to the history stack, that history entry is used instead.
+    window.addEventListener("popstate", popStateTiggered);
     return () => {
+      // remove listener on unmount
       window.removeEventListener("popstate", popStateTiggered);
     };
   }, []);
 
   if (!CurrentComponent) {
-    return <div></div>;
+    return <div>No component</div>;
   }
 
   return <CurrentComponent />;
@@ -63,6 +67,7 @@ function Link(props) {
   const onClick = (e) => {
     e.preventDefault(); // Prevent the default anchor link behavior
 
+    console.log("Clicked on link");
     // Use history.pushState to change the URL without reloading the page
     window.history.pushState({}, "", href);
 
