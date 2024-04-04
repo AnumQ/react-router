@@ -61,7 +61,6 @@ function Route(props) {
 function Link(props) {
   const { children, href } = props;
   const onClick = (e) => {
-    console.log("Clicked");
     e.preventDefault(); // Prevent the default anchor link behavior
 
     // Use history.pushState to change the URL without reloading the page
