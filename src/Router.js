@@ -31,13 +31,6 @@ function Router(props) {
         setCurrentComponent(() => routeMatch.component);
       }
     }
-
-    // const routeObject =
-    //   routes.find((route) => route.path === currentPath) || routes[0];
-
-    // if (routeObject) {
-    //   setCurrentComponent(() => routeObject.component);
-    // }
   };
 
   const popStateTiggered = () => {
@@ -45,7 +38,6 @@ function Router(props) {
   };
 
   useEffect(() => {
-    console.log("Router useEffect");
     window.addEventListener("popstate", popStateTiggered);
 
     handleNavigation();
