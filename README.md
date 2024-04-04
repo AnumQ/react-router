@@ -1,6 +1,7 @@
 # React router - made from scratch
 
-This project demonstrates a simple router that navigates between pages in react. It is a simple version of react-router npm package.
+This project demonstrates a simple navigation router that navigates between pages in react. 
+Simple version of react-router npm package.
 
 ## Development
 
