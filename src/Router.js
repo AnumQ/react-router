@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-function Router(props) {
-  const { children } = props;
+function Router({ children, onRouteChange }) {
   const [CurrentComponent, setCurrentComponent] = useState();
 
   let routes = [];
@@ -30,6 +29,8 @@ function Router(props) {
       } else {
         setCurrentComponent(() => routeMatch.component);
       }
+
+      onRouteChange(routeMatch.path);
     }
   };
 
@@ -52,7 +53,11 @@ function Router(props) {
   }, []);
 
   if (!CurrentComponent) {
-    return <div>No component</div>;
+    return (
+      <div style={{ marginTop: "10rem" }}>
+        No component matched for path '{window.location.pathname}'
+      </div>
+    );
   }
 
   return <CurrentComponent />;
@@ -67,7 +72,6 @@ function Link(props) {
   const onClick = (e) => {
     e.preventDefault(); // Prevent the default anchor link behavior
 
-    console.log("Clicked on link");
     // Use history.pushState to change the URL without reloading the page
     window.history.pushState({}, "", href);
 

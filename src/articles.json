@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "title": "The Fellowship of the Ring",
+    "author": "J.R.R. Tolkien",
+    "date": "1954-07-29",
+    "content": "The Fellowship of the Ring is the first volume of J.R.R. Tolkien's famous fantasy epic, 'The Lord of the Rings.' It follows the journey of Frodo Baggins and his companions as they embark on a perilous quest to destroy the One Ring, a source of unimaginable power that the dark lord Sauron seeks to reclaim to conquer all of Middle-earth. Along their journey, the Fellowship faces treacherous landscapes, mythical creatures, and internal strife, showcasing the strength of friendship and courage in the face of overwhelming darkness.",
+    "tags": ["lord of the rings", "fantasy", "adventure"],
+    "imageUrl": "https://d1nslcd7m2225b.cloudfront.net/Pictures/480xAny/4/7/7/1252477_fellowship.jpg"
+  },
+  {
+    "id": 2,
+    "title": "The Two Towers",
+    "author": "J.R.R. Tolkien",
+    "date": "1954-11-11",
+    "content": "The Two Towers is the second volume of J.R.R. Tolkien's epic fantasy saga, 'The Lord of the Rings.' This installment sees the Fellowship broken, with its members scattered across Middle-earth, each playing their part in the greater war against Sauron. From the hauntingly beautiful forests of Lothlórien to the battle-scarred fields of Rohan, the story delves into themes of sacrifice, loyalty, and the enduring hope that light can prevail over darkness.",
+    "tags": ["lord of the rings", "fantasy", "adventure"],
+    "imageUrl": "https://cdn.vox-cdn.com/thumbor/PWYg7at_GQ82B3Yn0gTzK7U8InU=/0x0:3816x1575/1320x743/filters:focal(767x23:1377x633):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/69927797/ROTK_eye_of_sauron.0.jpg"
+  },
+  {
+    "id": 3,
+    "title": "The Return of the King",
+    "author": "J.R.R. Tolkien",
+    "date": "1955-10-20",
+    "content": "The Return of the King is the final volume of J.R.R. Tolkien's 'The Lord of the Rings.' It chronicles the epic conclusion of the War of the Ring and the ultimate fate of Middle-earth. With the return of the true king, Aragorn, and the destruction of the One Ring, peace is restored to the realm.",
+    "tags": ["lord of the rings", "fantasy", "adventure"],
+    "imageUrl": "https://assets.mubicdn.net/images/film/2112/image-w1280.jpg"
+  },
+  {
+    "id": 4,
+    "title": "The Hobbit",
+    "author": "J.R.R. Tolkien",
+    "date": "1937-09-21",
+    "content": "Bilbo Baggins, a hobbit of the Shire, is swept into an unexpected adventure when Gandalf the wizard and a group of dwarves enlist his help to reclaim their homeland and treasure from the dragon Smaug.",
+    "tags": ["fantasy", "adventure"],
+    "imageUrl": "https://www.gannett-cdn.com/authoring/2012/12/14/NCOD/ghows-OH-f9d0b938-e619-4a6c-9162-2fc210751a75-5d9df8a9.jpeg?crop=523,295,x60,y0&width=960"
+  },
+  {
+    "id": 5,
+    "title": "The Silmarillion",
+    "author": "J.R.R. Tolkien",
+    "date": "1977-09-15",
+    "content": "A collection of mythopoeic stories and legends that delve into the history and cosmology of Tolkien's fictional universe, exploring the creation of Middle-earth, the struggles between good and evil, and the deeds of heroes and villains across ages.",
+    "tags": ["fantasy", "mythology"],
+    "imageUrl": "https://media.thenerdstash.com/wp-content/uploads/2022/01/The-Hobbit-trilogy.jpg.webp"
+  },
+  {
+    "id": 6,
+    "title": "The Children of Húrin",
+    "author": "J.R.R. Tolkien",
+    "date": "2007-04-17",
+    "content": "A tragic tale of love, betrayal, and heroism set in the First Age of Middle-earth, following the cursed fate of Túrin Turambar as he struggles against the dark forces of Morgoth.",
+    "tags": ["fantasy", "tragedy"],
+    "imageUrl": "https://www.denofgeek.com/wp-content/uploads/2023/12/Sam-and-Frodo-in-Return-of-the-King.jpg?fit=1200%2C675"
+  },
+  {
+    "id": 7,
+    "title": "The Fall of Gondolin",
+    "author": "J.R.R. Tolkien",
+    "date": "2018-08-30",
+    "content": "A tale of the legendary city of Gondolin, its tragic downfall, and the valiant efforts of its defenders against the dark forces of Morgoth, as recounted in Tolkien's posthumously published work.",
+    "tags": ["fantasy", "legend"],
+    "imageUrl": "https://media.vanityfair.com/photos/6108358567433342b380092f/16:9/w_1280,c_limit/lord-of-the-rings-amazon-studios.png"
+  },
+  {
+    "id": 8,
+    "title": "The Adventures of Tom Bombadil",
+    "author": "J.R.R. Tolkien",
+    "date": "1962-11-15",
+    "content": "A collection of whimsical and fantastical poems set in Middle-earth, featuring the mischievous hobbit Tom Bombadil and other curious characters from Tolkien's legendarium.",
+    "tags": ["fantasy", "poetry"],
+    "imageUrl": "https://miro.medium.com/v2/resize:fit:1006/1*AdYgk7x88HvYELdP7vX4sw.jpeg"
+  },
+  {
+    "id": 9,
+    "title": "The History of Middle-earth",
+    "author": "J.R.R. Tolkien",
+    "date": "1983-09-22",
+    "content": "A comprehensive series edited by Christopher Tolkien, exploring the evolution and development of J.R.R. Tolkien's legendarium, including early drafts, unpublished writings, and extensive commentary.",
+    "tags": ["fantasy", "literary analysis"],
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/A-surprise-return-to-middle-earth-1551719095.jpg/640px-A-surprise-return-to-middle-earth-1551719095.jpg"
+  },
+  {
+    "id": 10,
+    "title": "Beren and Lúthien",
+    "author": "J.R.R. Tolkien",
+    "date": "2017-06-01",
+    "content": "The tale of Beren, a mortal man, and Lúthien, an immortal elf maiden, and their quest to recover the Silmaril from the dark lord Morgoth, a story of love, sacrifice, and heroism.",
+    "tags": ["fantasy", "romance"],
+    "imageUrl": "https://i2-prod.mirror.co.uk/incoming/article10541999.ece/ALTERNATES/n615/PROD-images.jpg"
+  },
+  {
+    "id": 11,
+    "title": "Unfinished Tales",
+    "author": "J.R.R. Tolkien",
+    "date": "1980-09-01",
+    "content": "A collection of narratives and essays by J.R.R. Tolkien, edited by Christopher Tolkien, offering glimpses into various aspects of Middle-earth history, including stories of Númenor, the Rings of Power, and more.",
+    "tags": ["fantasy", "history"],
+    "imageUrl": "https://mythgard.org/wp-content/uploads/sites/20/2017/10/unfinished-tales-header.jpg"
+  },
+  {
+    "id": 12,
+    "title": "The Letters of J.R.R. Tolkien",
+    "author": "J.R.R. Tolkien",
+    "date": "1981-06-15",
+    "content": "A collection of J.R.R. Tolkien's personal correspondence, offering insights into his life, creative process, and thoughts on literature, language, and the fantasy genre.",
+    "tags": ["literature", "correspondence"],
+    "imageUrl": "https://w0.peakpx.com/wallpaper/693/48/HD-wallpaper-the-lord-of-the-rings-letters-movies.jpg"
+  }
+]

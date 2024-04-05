@@ -6,9 +6,7 @@ export const useMarkDown = (filename) => {
   useEffect(() => {
     const readMarkdownFile = async () => {
       try {
-        const markdownModule = await import("./home.md"); // Import Markdown content
-        const file = markdownModule.default;
-        const response = await fetch(file);
+        const response = await fetch(filename);
         const text = await response.text();
         setData(text);
       } catch (error) {

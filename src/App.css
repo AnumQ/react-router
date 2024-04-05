@@ -1,13 +1,37 @@
-html,
-body {
-  background-color: var(--background);
+/* Reset CSS */
+div,
+a,
+p,
+ul,
+li {
+  list-style: none;
+  display: inline-block;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding-inline-start: 0;
+  unicode-bidi: isolate;
 }
 
 :root {
   --background: rgb(24, 24, 24);
 }
 
+html,
+body {
+  background-color: var(--background);
+}
+
 .App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  text-align: left;
+  color: rgb(197, 188, 188);
+  width: 100vw;
 }
 
 .App-header {
@@ -17,37 +41,89 @@ body {
   justify-content: left;
   font-size: calc(10px + 2vmin);
   border-bottom: 2px solid rgb(38, 38, 38);
+  width: 100%;
 }
 
-ul {
-  list-style: none;
-}
-
-li {
-  display: inline-block;
-  margin-left: 1rem;
-}
 .menu {
+  height: 5rem;
+}
+
+.menu ul {
+  display: flex;
+  height: inherit;
+  flex-direction: row;
+  gap: 1rem;
 }
 .menu li {
-  width: 6rem;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  height: inherit;
+}
+
+li.selected {
+  background-color: rgb(113, 111, 111);
+  animation: fadeIn 100ms;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .menu a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: inherit;
+  margin-left: 1rem;
+  margin-right: 1rem;
   color: rgb(217, 210, 210);
   text-decoration: none;
 }
 
 .container {
-  font-family: Georgia, "Times New Roman", Times, serif;
-
+  display: flex;
+  justify-content: center;
+  padding-top: 1rem;
   max-width: 50rem;
-  margin: 0 auto;
-  text-align: left;
-  color: rgb(197, 188, 188);
+  flex-direction: column;
+}
 
-  img {
-    width: 100%;
+.content {
+  h3 {
+    margin: 2rem 0rem 2rem 0rem;
   }
+}
+
+.articles-list {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  .article {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 20rem;
+
+    .image-container {
+      overflow: hidden;
+      width: 100%;
+      height: 10rem;
+
+      display: flex;
+      /* justify-self: center; */
+      /* align-items: center; */
+
+      .image {
+        /* width: 60%; */
+        margin: auto;
+      }
+    }
+  }
+}
+
+a {
+  color: grey;
 }

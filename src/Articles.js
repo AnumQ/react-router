@@ -1,21 +1,32 @@
 import React from "react";
 import "./App.css";
 import { Link } from "./Router";
-
-// Example article data
-const articles = [
-  { id: 1, title: "Article 1", summary: "Summary of article 1" },
-  { id: 2, title: "Article 2", summary: "Summary of article 2" },
-  { id: 3, title: "Article 3", summary: "Summary of article 3" },
-];
+import articles from "./articles.json";
 
 export function ArticleDetails({ id }) {
-  const article = articles.find((article) => article.id === parseInt(id, 10));
+  console.log(id);
+  console.log(typeof id);
+  const article = articles.find((article) => article.id === parseInt(id));
 
   return (
-    <div>
+    <div className="container">
+      <Image imageUrl={article.imageUrl}></Image>
       <h1>{article?.title}</h1>
-      <p>{article?.summary}</p>
+      <p>{article?.content}</p>
+    </div>
+  );
+}
+
+function Image(props) {
+  return (
+    <div className="image-container">
+      <img
+        className="image"
+        src={props.imageUrl}
+        alt="article"
+        width="100%"
+        height="auto"
+      ></img>
     </div>
   );
 }
@@ -23,18 +34,28 @@ export function ArticleDetails({ id }) {
 function Articles() {
   return (
     <div className="container">
-      <h1>All Articles</h1>
-      <ul>
-        {articles.map((article) => (
-          <li key={article.id} style={{ cursor: "pointer" }}>
-            <h2>{article.title}</h2>
-            <p>{article.summary}</p>
-            <Link href={`/article/${article.id}`}>Read more</Link>
-          </li>
-        ))}
-      </ul>
+      <div className="">
+        <ul className="articles-list">
+          {articles.map((article) => (
+            <li className="article" key={article.id}>
+              <Image imageUrl={article.imageUrl}></Image>
+              <h2>{article.title}</h2>
+              <p>{truncate(article.content, 200)}</p>
+              <Link href={`/articles/${article.id}`}>Read more</Link>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
+}
+
+function truncate(text, maxLength, suffix = "...") {
+  if (text.length <= maxLength) {
+    return text;
+  } else {
+    return text.slice(0, maxLength - suffix.length) + suffix;
+  }
 }
 
 export default Articles;
