@@ -41,7 +41,7 @@ function Articles() {
               <Image imageUrl={article.imageUrl}></Image>
               <h2>{article.title}</h2>
               <p>{truncate(article.content, 200)}</p>
-              <Link href={`/articles/${article.id}`}>Read more</Link>
+              <Link href={`/article/${article.id}`}>Read more</Link>
             </li>
           ))}
         </ul>
