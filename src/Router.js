@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 
 function Router({ children, onRouteChange }) {
   const [CurrentComponent, setCurrentComponent] = useState();
@@ -12,7 +12,7 @@ function Router({ children, onRouteChange }) {
     }
   }
 
-  const handleNavigation = () => {
+  const handleNavigation = useCallback(() => {
     const routeMatch = routes.find(({ path, isDynamic }) => {
       const regex = new RegExp(`^${path.replace(/:\w+/g, "\\w+")}$`);
       const regexTest = regex.test(window.location.pathname);
@@ -32,11 +32,11 @@ function Router({ children, onRouteChange }) {
 
       onRouteChange(routeMatch.path);
     }
-  };
+  }, []);
 
-  const popStateTiggered = () => {
+  const popStateTiggered = useCallback(() => {
     handleNavigation();
-  };
+  }, [handleNavigation]);
 
   useEffect(() => {
     // To handle navigation on initial load
@@ -50,7 +50,7 @@ function Router({ children, onRouteChange }) {
       // remove listener on
       window.removeEventListener("popstate", popStateTiggered);
     };
-  }, []);
+  }, [handleNavigation, popStateTiggered]);
 
   if (!CurrentComponent) {
     return (
