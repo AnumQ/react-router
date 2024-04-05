@@ -1,17 +1,17 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState, useCallback, useMemo } from "react";
 
 function Router({ children, onRouteChange }) {
   const [CurrentComponent, setCurrentComponent] = useState();
 
-  let routes = [];
-  if (children && children.props && children.props.path) {
-    routes.push(children.props);
-  } else {
-    if (children && children.length > 0) {
-      routes = children.map((child) => child.props);
-    }
-  }
+  console.log("Router is rendered");
+  const generateRoutes = () => getRoutes(children); // function that returns routes based on children
+  // Cache the computed value of getRoutes so it is not generated multiple times
+  // Only if children change, the value will be re-computed
+  const routes = useMemo(generateRoutes, [children]);
 
+  useEffect(() => {
+    console.log("L13");
+  }, [routes]);
   const handleNavigation = useCallback(() => {
     const routeMatch = routes.find(({ path, isDynamic }) => {
       const regex = new RegExp(`^${path.replace(/:\w+/g, "\\w+")}$`);
@@ -32,7 +32,7 @@ function Router({ children, onRouteChange }) {
 
       onRouteChange(routeMatch.path);
     }
-  }, []);
+  }, [onRouteChange, routes]);
 
   const popStateTiggered = useCallback(() => {
     handleNavigation();
@@ -61,6 +61,18 @@ function Router({ children, onRouteChange }) {
   }
 
   return <CurrentComponent />;
+}
+
+function getRoutes(children) {
+  let routes = [];
+  if (children && children.props && children.props.path) {
+    routes.push(children.props);
+  } else {
+    if (children && children.length > 0) {
+      routes = children.map((child) => child.props);
+    }
+  }
+  return routes;
 }
 
 function Route(props) {
