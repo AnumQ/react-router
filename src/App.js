@@ -3,34 +3,11 @@ import "./App.css";
 import Home from "./Home";
 import About from "./About";
 import Articles, { ArticleDetails } from "./Articles";
-import { Router, Route, Link } from "./Router";
-
-function Menu({ currentPath }) {
-  const menuItems = [
-    { path: "/", title: "Home" },
-    { path: "/articles", title: "Articles" },
-    { path: "/about", title: "About" },
-  ];
-
-  return (
-    <nav className="menu">
-      <ul>
-        {menuItems.map((item, index) => {
-          return (
-            <li
-              key={`item-${index}`}
-              className={currentPath === item.path ? "selected" : ""}
-            >
-              <Link href={item.path}>{item.title}</Link>
-            </li>
-          );
-        })}
-      </ul>
-    </nav>
-  );
-}
+import { Router, Route } from "./Router";
+import { Menu } from "./Menu";
 
 function App() {
+  console.log("App is rendered");
   const [currentPath, setCurrentPath] = useState("");
   const onRouteChange = (route) => setCurrentPath(route);
   return (
