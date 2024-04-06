@@ -1,6 +1,14 @@
-import React, { useEffect, useState, useCallback, useMemo } from "react";
+import React, {
+  useEffect,
+  useState,
+  useCallback,
+  useMemo,
+  useContext,
+} from "react";
+import { useGlobalContext } from "./GlobalContextProvider";
 
-function Router({ children, onRouteChange }) {
+function Router({ children }) {
+  const { currentPath, setCurrentPath } = useGlobalContext();
   const [CurrentComponent, setCurrentComponent] = useState();
 
   console.log("Router is rendered");
@@ -9,9 +17,6 @@ function Router({ children, onRouteChange }) {
   // Only if children change, the value will be re-computed
   const routes = useMemo(generateRoutes, [children]);
 
-  useEffect(() => {
-    console.log("L13");
-  }, [routes]);
   const handleNavigation = useCallback(() => {
     const routeMatch = routes.find(({ path, isDynamic }) => {
       const regex = new RegExp(`^${path.replace(/:\w+/g, "\\w+")}$`);
@@ -30,9 +35,12 @@ function Router({ children, onRouteChange }) {
         setCurrentComponent(() => routeMatch.component);
       }
 
-      onRouteChange(routeMatch.path);
+      console.log("L38");
+      console.info("currentPath:", currentPath);
+      console.info("routeMatch.path):", routeMatch.path);
+      setCurrentPath(routeMatch.path);
     }
-  }, [onRouteChange, routes]);
+  }, [routes]);
 
   const popStateTiggered = useCallback(() => {
     handleNavigation();
