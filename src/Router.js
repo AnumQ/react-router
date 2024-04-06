@@ -1,17 +1,10 @@
-import React, {
-  useEffect,
-  useState,
-  useCallback,
-  useMemo,
-  useContext,
-} from "react";
+import React, { useEffect, useState, useCallback, useMemo } from "react";
 import { useGlobalContext } from "./GlobalContextProvider";
 
 function Router({ children }) {
   const { currentPath, setCurrentPath } = useGlobalContext();
   const [CurrentComponent, setCurrentComponent] = useState();
 
-  console.log("Router is rendered");
   const generateRoutes = () => getRoutes(children); // function that returns routes based on children
   // Cache the computed value of getRoutes so it is not generated multiple times
   // Only if children change, the value will be re-computed
@@ -40,7 +33,7 @@ function Router({ children }) {
       console.info("routeMatch.path):", routeMatch.path);
       setCurrentPath(routeMatch.path);
     }
-  }, [routes]);
+  }, [routes, currentPath, setCurrentPath]);
 
   const popStateTiggered = useCallback(() => {
     handleNavigation();
