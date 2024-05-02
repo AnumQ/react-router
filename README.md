@@ -1,6 +1,6 @@
-# React router - made from scratch
+# React Router - A custom react router written in pure react (no external libraries)
 
-This project demonstrates a simple navigation router that navigates between pages in react. 
+This project demonstrates a navigation router that navigates between pages in react. 
 Simple version of react-router npm package.
 
 ## To run the app:
